@@ -177,6 +177,10 @@
     <Compile Include="Migrations\202205051302492_update again.Designer.cs">
       <DependentUpon>202205051302492_update again.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205061539061_update-db.cs" />
+    <Compile Include="Migrations\202205061539061_update-db.designer.cs">
+      <DependentUpon>202205061539061_update-db.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\Sourse.cs" />
@@ -261,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205051302492_update again.resx">
       <DependentUpon>202205051302492_update again.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205061539061_update-db.resx">
+      <DependentUpon>202205061539061_update-db.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

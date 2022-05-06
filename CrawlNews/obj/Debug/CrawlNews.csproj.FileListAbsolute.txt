@@ -205,3 +205,4 @@ E:\CSharp\EAD\CrawlNews\CrawlNews\bin\HtmlAgilityPack.CssSelectors.dll
 E:\CSharp\EAD\CrawlNews\CrawlNews\bin\HtmlAgilityPack.dll
 E:\CSharp\EAD\CrawlNews\CrawlNews\bin\HtmlAgilityPack.xml
 E:\CSharp\EAD\CrawlNews\CrawlNews\bin\HtmlAgilityPack.CssSelectors.pdb
+E:\CSharp\EAD\CrawlNews\CrawlNews\obj\Debug\CrawlNews.Migrations.updatedb.resources
