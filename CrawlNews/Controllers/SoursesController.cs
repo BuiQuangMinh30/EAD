@@ -147,13 +147,14 @@ namespace CrawlNews.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CheckLink(Sourse sourceCheck)
         {
-            if (sourceCheck.Url != "" )
+            if (sourceCheck.Url != "" || sourceCheck.SelectorSubUrl != "")
             {
+                
                 try
                 {
                     var web = new HtmlWeb();
                     HtmlDocument doc = web.Load(sourceCheck.Url);
-                    var nodeList = doc.QuerySelectorAll(sourceCheck.Url);//tìm đến những thẻ a nằm trong h3 có class= title-news
+                    var nodeList = doc.QuerySelectorAll(sourceCheck.SelectorSubUrl);//tìm đến những thẻ a nằm trong h3 có class= title-news
                     var setLinkSource = new HashSet<Sourse>(); // Đảm bảo link không giống nhau, nếu có sẽ bị ghi đè ở phần tử trước
 
                     foreach (var node in nodeList)
@@ -170,12 +171,12 @@ namespace CrawlNews.Controllers
 
                         setLinkSource.Add(sourceCheck1);
                     }
-
+                    Debug.WriteLine("gia trị", sourceCheck.Url.ToString());
                     return PartialView("GetListSource", setLinkSource);
                 }
                 catch (Exception e)
                 {
-                    Debug.WriteLine("Error: " + e.Message);
+                    Debug.WriteLine("Error ở đây: " + e.Message);
                     return PartialView("Faild");
                 }
             }
@@ -195,7 +196,7 @@ namespace CrawlNews.Controllers
                     var web = new HtmlWeb();
                     HtmlDocument doc = web.Load(sourceCheck.Url);
                     var title = doc.QuerySelector(sourceCheck.SelectorTitle).InnerText ?? "";
-                    var description = doc.QuerySelector(sourceCheck.SelectorDescrition).InnerText;
+                    var description = doc.QuerySelector(sourceCheck.SelectorDescrition).InnerText ?? "";
                     var imageNode = doc.QuerySelector(sourceCheck.SelectorImage)?.Attributes["data-src"].Value;
                     var content = doc.QuerySelector(sourceCheck.SelectorContent)?.InnerText;
                     string thumbnail = "";
