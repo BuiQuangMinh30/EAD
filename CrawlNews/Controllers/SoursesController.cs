@@ -187,8 +187,9 @@ namespace CrawlNews.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Preview(Sourse sourceCheck)
         {
-            if (sourceCheck.SubUrl != "" && sourceCheck.SelectorTitle != "" && sourceCheck.SelectorDescrition != ""
-                && sourceCheck.SelectorContent != "" && sourceCheck.SelectorSubUrl != "" && sourceCheck.SelectorImage != "")
+            if (sourceCheck.SubUrl != "" && sourceCheck.SelectorTitle != "" && sourceCheck.SelectorDescription != ""
+                && sourceCheck.SelectorContent != "" && sourceCheck.SelectorSubUrl != "" 
+                && sourceCheck.SelectorImage != "" && sourceCheck.Category != "")
             {
                 try
                 {
@@ -196,9 +197,10 @@ namespace CrawlNews.Controllers
                     var web = new HtmlWeb();
                     HtmlDocument doc = web.Load(sourceCheck.SubUrl);
                     var title = doc.QuerySelector(sourceCheck.SelectorTitle)?.InnerText ?? "";
-                    var description = doc.QuerySelector(sourceCheck.SelectorDescrition)?.InnerText ?? "";
+                    var description = doc.QuerySelector(sourceCheck.SelectorDescription)?.InnerText ?? "";
                     var imageNode = doc.QuerySelector(sourceCheck.SelectorImage)?.Attributes["data-src"].Value;
                     var content = doc.QuerySelector(sourceCheck.SelectorContent)?.InnerText;
+                    var category = doc.QuerySelector(sourceCheck.Category)?.InnerText ?? "";
                     string thumbnail = "";
                     if (imageNode != null)
                     {
@@ -221,7 +223,8 @@ namespace CrawlNews.Controllers
                         Description = description,
                         Content = contentBuilder.ToString(),
                         Image = thumbnail,
-                      
+                        Category = category,
+
                     };
 
                     return PartialView("GetListSelector", article);

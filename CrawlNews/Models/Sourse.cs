@@ -13,9 +13,9 @@ namespace CrawlNews.Models
         public string SubUrl { get; set; }
         public string SelectorTitle { get; set; }
         public string SelectorImage { get; set; }
-        public string SelectorDescrition { get; set; }
+        public string SelectorDescription { get; set; }
         public string SelectorContent { get; set; }
-        public string CategoryId { get; set; }
+        public string Category { get; set; }
 
 
 
