@@ -1,0 +1,36 @@
+﻿@model CrawlNews.Models.Article
+
+<div>
+    <h3>
+        Tiêu đề:
+    </h3>
+    @Model.Title
+</div>
+
+<div>
+    <h3>
+        Mô tả:
+    </h3>
+   @* @Model.Description*@
+</div>
+
+<div>
+    <h3>
+        Ảnh:
+    </h3>
+    @*<img src="@Model.Thumbnail" alt="Alternate Text" />*@
+</div>
+
+<div>
+    <h3>
+        Nội dung:
+    </h3>
+    @Model.Content
+</div>
+
+<div>
+    <h3>
+        Tác giả:
+    </h3>
+    @*@Model.Author*@
+</div>
