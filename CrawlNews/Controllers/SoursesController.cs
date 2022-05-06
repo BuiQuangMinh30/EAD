@@ -187,16 +187,16 @@ namespace CrawlNews.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Preview(Sourse sourceCheck)
         {
-            if (sourceCheck.Url != "" && sourceCheck.SelectorTitle != "" && sourceCheck.SelectorDescrition != ""
+            if (sourceCheck.SubUrl != "" && sourceCheck.SelectorTitle != "" && sourceCheck.SelectorDescrition != ""
                 && sourceCheck.SelectorContent != "" && sourceCheck.SelectorSubUrl != "" && sourceCheck.SelectorImage != "")
             {
                 try
                 {
                     Console.OutputEncoding = System.Text.Encoding.UTF8;
                     var web = new HtmlWeb();
-                    HtmlDocument doc = web.Load(sourceCheck.Url);
-                    var title = doc.QuerySelector(sourceCheck.SelectorTitle).InnerText ?? "";
-                    var description = doc.QuerySelector(sourceCheck.SelectorDescrition).InnerText ?? "";
+                    HtmlDocument doc = web.Load(sourceCheck.SubUrl);
+                    var title = doc.QuerySelector(sourceCheck.SelectorTitle)?.InnerText ?? "";
+                    var description = doc.QuerySelector(sourceCheck.SelectorDescrition)?.InnerText ?? "";
                     var imageNode = doc.QuerySelector(sourceCheck.SelectorImage)?.Attributes["data-src"].Value;
                     var content = doc.QuerySelector(sourceCheck.SelectorContent)?.InnerText;
                     string thumbnail = "";
