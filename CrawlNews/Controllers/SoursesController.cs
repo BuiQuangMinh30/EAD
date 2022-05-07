@@ -139,6 +139,7 @@ namespace CrawlNews.Controllers
         }
          public ActionResult PreviewLink()
         {
+            ViewBag.ListCategory = db.Categories.ToList();
             return View();
         }
 
@@ -149,9 +150,9 @@ namespace CrawlNews.Controllers
         {
             if (sourceCheck.Url != "" || sourceCheck.SelectorSubUrl != "")
             {
-                
                 try
                 {
+                    ViewBag.ListCategory = db.Categories.ToList();
                     var web = new HtmlWeb();
                     HtmlDocument doc = web.Load(sourceCheck.Url);
                     var nodeList = doc.QuerySelectorAll(sourceCheck.SelectorSubUrl);//tìm đến những thẻ a nằm trong h3 có class= title-news
@@ -185,14 +186,15 @@ namespace CrawlNews.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Preview(Sourse sourceCheck)
+        public ActionResult Preview(Sourse sourceCheck , int category)
         {
             if (sourceCheck.SubUrl != "" && sourceCheck.SelectorTitle != "" && sourceCheck.SelectorDescription != ""
                 && sourceCheck.SelectorContent != "" && sourceCheck.SelectorSubUrl != "" 
-                && sourceCheck.SelectorImage != "" && sourceCheck.Category != "")
+                && sourceCheck.SelectorImage != "" )
             {
                 try
                 {
+                   
                     Console.OutputEncoding = System.Text.Encoding.UTF8;
                     var web = new HtmlWeb();
                     HtmlDocument doc = web.Load(sourceCheck.SubUrl);
@@ -200,7 +202,7 @@ namespace CrawlNews.Controllers
                     var description = doc.QuerySelector(sourceCheck.SelectorDescription)?.InnerText ?? "";
                     var imageNode = doc.QuerySelector(sourceCheck.SelectorImage)?.Attributes["data-src"].Value;
                     var content = doc.QuerySelector(sourceCheck.SelectorContent)?.InnerText;
-                    var category = doc.QuerySelector(sourceCheck.Category)?.InnerText ?? "";
+                    //var category = doc.QuerySelector(sourceCheck.Category)?.InnerText ?? "";
                     string thumbnail = "";
                     if (imageNode != null)
                     {
@@ -214,16 +216,17 @@ namespace CrawlNews.Controllers
                     StringBuilder contentBuilder = new StringBuilder();
                     foreach (var content1 in contentNode)
                     {
-                        contentBuilder.Append(content.ToString());
+                        contentBuilder.Append(content1.ToString());
                     }
 
                     Article article = new Article()
                     {
                         Title = title,
                         Description = description,
-                        Content = contentBuilder.ToString(),
+                        Content = content,
                         Image = thumbnail,
-                        Category = category,
+                        Category = db.Categories.Find(category).Name,
+                        //Category = category,
 
                     };
 

@@ -190,9 +190,6 @@ E:\CSharp\EAD\CrawlNews\CrawlNews\bin\Newtonsoft.Json.xml
 E:\CSharp\EAD\CrawlNews\CrawlNews\bin\Antlr3.Runtime.pdb
 E:\CSharp\EAD\CrawlNews\CrawlNews\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 E:\CSharp\EAD\CrawlNews\CrawlNews\obj\Debug\CrawlNews.csproj.AssemblyReference.cache
-E:\CSharp\EAD\CrawlNews\CrawlNews\obj\Debug\CrawlNews.Migrations.vn.resources
-E:\CSharp\EAD\CrawlNews\CrawlNews\obj\Debug\CrawlNews.Migrations.updateagain.resources
-E:\CSharp\EAD\CrawlNews\CrawlNews\obj\Debug\CrawlNews.csproj.GenerateResource.cache
 E:\CSharp\EAD\CrawlNews\CrawlNews\obj\Debug\CrawlNews.csproj.CoreCompileInputs.cache
 E:\CSharp\EAD\CrawlNews\CrawlNews\obj\Debug\CrawlNews.csproj.CopyComplete
 E:\CSharp\EAD\CrawlNews\CrawlNews\obj\Debug\CrawlNews.dll
@@ -205,4 +202,5 @@ E:\CSharp\EAD\CrawlNews\CrawlNews\bin\HtmlAgilityPack.CssSelectors.dll
 E:\CSharp\EAD\CrawlNews\CrawlNews\bin\HtmlAgilityPack.dll
 E:\CSharp\EAD\CrawlNews\CrawlNews\bin\HtmlAgilityPack.xml
 E:\CSharp\EAD\CrawlNews\CrawlNews\bin\HtmlAgilityPack.CssSelectors.pdb
-E:\CSharp\EAD\CrawlNews\CrawlNews\obj\Debug\CrawlNews.Migrations.updatedb.resources
+E:\CSharp\EAD\CrawlNews\CrawlNews\obj\Debug\CrawlNews.Migrations.InitTable.resources
+E:\CSharp\EAD\CrawlNews\CrawlNews\obj\Debug\CrawlNews.csproj.GenerateResource.cache

@@ -9,13 +9,13 @@ namespace CrawlNews.config
 {
     public class DBConnection : DbContext
     {
-        public DBConnection() : base("name=CrawDB")
+        public DBConnection() : base("name=CrawDBLocal")
         {
         }
 
         public DbSet<Sourse> Sourses { get; set; }
         public DbSet<Article> Articles { get; set; }
 
- 
+        public DbSet<Category> Categories { get; set; }
     }
 }

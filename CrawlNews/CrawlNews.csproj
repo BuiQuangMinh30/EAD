@@ -163,6 +163,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="config\DBConnection.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SoursesController.cs" />
@@ -170,20 +171,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202205051232067_vn.cs" />
-    <Compile Include="Migrations\202205051232067_vn.designer.cs">
-      <DependentUpon>202205051232067_vn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205051302492_update again.cs" />
-    <Compile Include="Migrations\202205051302492_update again.Designer.cs">
-      <DependentUpon>202205051302492_update again.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205061539061_update-db.cs" />
-    <Compile Include="Migrations\202205061539061_update-db.designer.cs">
-      <DependentUpon>202205061539061_update-db.cs</DependentUpon>
+    <Compile Include="Migrations\202205071320307_InitTable.cs" />
+    <Compile Include="Migrations\202205071320307_InitTable.designer.cs">
+      <DependentUpon>202205071320307_InitTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Article.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Sourse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -365,6 +359,11 @@
     <Content Include="Scripts\vendor\bootstrap\js\bootstrap.min.js.map" />
     <Content Include="Views\Shared\LayoutBlog.cshtml" />
     <Content Include="Views\Client\BlogDetail.cshtml" />
+    <Content Include="Views\Categories\Create.cshtml" />
+    <Content Include="Views\Categories\Delete.cshtml" />
+    <Content Include="Views\Categories\Details.cshtml" />
+    <Content Include="Views\Categories\Edit.cshtml" />
+    <Content Include="Views\Categories\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -383,14 +382,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202205051232067_vn.resx">
-      <DependentUpon>202205051232067_vn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205051302492_update again.resx">
-      <DependentUpon>202205051302492_update again.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205061539061_update-db.resx">
-      <DependentUpon>202205061539061_update-db.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205071320307_InitTable.resx">
+      <DependentUpon>202205071320307_InitTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
