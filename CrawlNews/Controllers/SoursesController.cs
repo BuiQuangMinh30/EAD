@@ -201,7 +201,7 @@ namespace CrawlNews.Controllers
                     var title = doc.QuerySelector(sourceCheck.SelectorTitle)?.InnerText ?? "";
                     var description = doc.QuerySelector(sourceCheck.SelectorDescription)?.InnerText ?? "";
                     var imageNode = doc.QuerySelector(sourceCheck.SelectorImage)?.Attributes["data-src"].Value;
-                    var content = doc.QuerySelector(sourceCheck.SelectorContent)?.InnerText;
+                    string content = doc.QuerySelector(sourceCheck.SelectorContent)?.InnerText;
                     //var category = doc.QuerySelector(sourceCheck.Category)?.InnerText ?? "";
                     string thumbnail = "";
                     if (imageNode != null)
@@ -212,12 +212,7 @@ namespace CrawlNews.Controllers
                     {
                         thumbnail = "";
                     }
-                    var contentNode = doc.QuerySelectorAll(sourceCheck.SelectorContent);
-                    StringBuilder contentBuilder = new StringBuilder();
-                    foreach (var content1 in contentNode)
-                    {
-                        contentBuilder.Append(content1.ToString());
-                    }
+                   
 
                     Article article = new Article()
                     {
